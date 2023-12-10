@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
-
+require('dotenv').config()
+const port = process.env.PORT
 const app = express()
 
 //config response json
@@ -19,4 +20,4 @@ const PetRoutes = require('./routes/PetRoutes')
 app.use('/users',UserRoutes)
 app.use('/pet',PetRoutes)
 
-app.listen(5000)
+app.listen(process.env.PORT)

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-
+require('dotenv').config()
+const DbUri = process.env.DB_URI
 async function main(){
-    await mongoose.connect('mongodb://localhost:27017/getapet')
+    await mongoose.connect(`${DbUri}`)
     console.log('conectou ao mongoose')
 }
 
